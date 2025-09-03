@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>สินค้า - P.tech inter Precision Co.,ltd.</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0; padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  header {
+    background: #003366;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .lang-switch button {
+    background: #ffcc00;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    margin-left: 0.3rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  nav {
+    background: #0055a5;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  .section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  .product-grid img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    display: block;
+    border-radius: 4px;
+  }
+  footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 class="lang th">สินค้า - P.tech inter Precision Co.,ltd.</h1>
+  <h1 class="lang en" style="display:none;">Products - P.tech inter Precision Co., Ltd.</h1>
+
+  <div class="lang-switch">
+    <button onclick="setLang('th')">ไทย</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html" class="lang th">หน้าหลัก</a>
+  <a href="index.html" class="lang en" style="display:none;">Home</a>
+
+  <a href="Product.html" class="lang th">สินค้า</a>
+  <a href="Product.html" class="lang en" style="display:none;">Products</a>
+</nav>
+
+<section class="section">
+  <h2 class="lang th">ตัวอย่างสินค้า</h2>
+  <h2 class="lang en" style="display:none;">Product Samples</h2>
+
+  <div class="product-grid">
+    <img src="images/product1.jpg" alt="Product 1" />
+    <img src="images/product2.jpg" alt="Product 2" />
+    <img src="images/product3.jpg" alt="Product 3" />
+    <img src="images/product4.jpg" alt="Product 4" />
+    <img src="images/product5.jpg" alt="Product 5" />
+    <img src="images/product6.jpg" alt="Product 6" />
+    <img src="images/product7.jpg" alt="Product 7" />
+    <img src="images/product8.jpg" alt="Product 8" />
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 P.tech inter Precision Co.,ltd. All rights reserved.
+</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang').forEach(el => {
+    el.style.display = el.classList.contains(lang) ? '' : 'none';
+  });
+  localStorage.setItem('siteLang', lang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem('siteLang') || 'th';
+  setLang(savedLang);
+});
+</script>
+
+</body>
+</html>
